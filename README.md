@@ -30,10 +30,8 @@ Users should be able to:
 - Desktop view
 ![](./screens/desktop.png)
 
-
-
 - Mobile view
-- ![](./screens/mobile.png)
+![](./screens/mobile.png)
 
 ### Links
 
