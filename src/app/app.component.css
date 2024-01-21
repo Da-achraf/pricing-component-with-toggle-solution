@@ -1,0 +1,229 @@
+:host {
+  --linear-gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+/* Desktop Design */
+
+.container {
+  height: 100vh;
+  background-color: var(--very-light-grayish-blue);
+  margin-inline: auto;
+  text-align: center;
+  padding: 4rem 0;
+  position: relative;
+}
+
+.container .bg-top {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.container .bg-bottom {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.period-container {
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.period-container .period {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.period-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--grayish-blue);
+}
+
+.period-container .period .period-item {
+  color: var(--light-grayish-blue);
+  font-size: .9rem;
+}
+
+.period-container .period .period-toggle-container {
+  background: var(--linear-gradient);
+  padding: .5rem 1rem;
+  height: 2rem;
+  width: 3.5rem;
+  position: relative;
+  border-radius: 1rem;
+}
+
+.period-container .period .period-toggle-circle {
+  position: absolute;
+  border: none;
+  background-color: var(--very-light-grayish-blue);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  left: .2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all .3s ease-in-out;
+}
+
+.period-container .period .period-toggle-circle:focus {
+  outline: none;
+  background: var(--grayish-blue);
+  border: .1px solid white;
+}
+
+
+.period-container .period .period-toggle-circle:hover {
+  cursor: pointer;
+  background: var(--grayish-blue);
+  border: .1px solid white;
+}
+
+.period-container .period .period-toggle-circle.active {
+  left: unset;
+  right: 0.2rem;
+}
+
+.pricing-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-inline: auto;
+  z-index: 10;
+}
+
+
+.pricing-container .pricing-item {
+  background-color: white;
+  min-width: 350px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 .7rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+.pricing-container .pricing-item.basic {
+  border-top-left-radius: .6rem;
+  border-bottom-left-radius: .6rem;
+}
+
+.pricing-container .pricing-item.master {
+  border-top-right-radius: .6rem;
+  border-bottom-right-radius: .6rem;
+}
+
+.pricing-container .pricing-item.professional {
+  height: 500px;
+  padding-block: 3.5rem;
+  border-radius: .6rem;
+  background: var(--linear-gradient);
+  color: white;
+}
+
+.pricing-container .professional h3,
+.pricing-container .professional .price,
+.pricing-container .professional .price-info {
+  color: white;
+}
+
+.pricing-container .pricing-item h3 {
+  margin-bottom: 1.6rem;
+}
+
+.pricing-container .pricing-item .price {
+  color: var(--dark-grayish-blue);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.pricing-container .professional .price {
+  color: var(--very-light-grayish-blue);
+}
+
+.pricing-container .pricing-item .price-info {
+  padding: 1rem 0;
+  font-size: .8rem;
+}
+
+.pricing-container .pricing-item .learn-more {
+  width: 100%;
+  margin-top: 2rem;
+  padding: .7rem 0;
+  font-size: .7rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  background: var(--linear-gradient);
+  color: white;
+  border: .1px solid var(--very-light-grayish-blue);
+  border-radius: .4rem;
+}
+
+.pricing-container .pricing-item .learn-more:hover{
+  cursor: pointer;
+  background: white;
+  color: var(--linear-gradient);
+  border: .1px solid var(--light-grayish-blue);
+}
+
+.pricing-container .professional .learn-more {
+  background: white;
+  color: var(--grayish-blue);
+  border: .1px solid white;
+}
+
+.pricing-container .professional .learn-more:hover {
+  cursor: pointer;
+  background: var(--linear-gradient);
+  color: white;
+  border: .1px solid white;
+}
+
+.divider {
+  display: block;
+  background: var(--light-grayish-blue);
+  height: .01rem;
+}
+
+
+/* Mobile Design */
+
+
+@media screen and (max-width: 1000px){
+
+  .pricing-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .container .bg-top svg {
+    width: 150px;
+  }
+
+  .container .bg-bottom svg {
+    display: none;
+  }
+
+  .pricing-container .pricing-item {
+    box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, .1);
+  }
+
+
+  .pricing-container .pricing-item.basic,
+  .pricing-container .pricing-item.master {
+    border-radius: .6rem;
+  }
+
+
+
+}

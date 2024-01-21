@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
+import {Component, computed, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'pricing-component-app';
+
+  isMonthly = signal<boolean>(true)
+
+  prices = computed(() => ({
+    basic: this.isMonthly() ? 19.99 : 199.99,
+    professional: this.isMonthly() ? 24.99 : 249.99,
+    master: this.isMonthly() ? 39.99 : 399.99
+  }))
+
+  toggleIsMonthly() {
+    this.isMonthly.set(!this.isMonthly())
+  }
 }
