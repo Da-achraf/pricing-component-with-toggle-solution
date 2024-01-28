@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
+- Solution URL: [Solution URL]([https://your-solution-url.com](https://www.frontendmentor.io/solutions/pricing-component-with-toggle-solution-using-angular-17-7C2iCHwPvR))
 - Live Site URL: [Live Site URL](https://pricing-component-with-toggle-solution-9kn6wq4zt.vercel.app/)
 
 
